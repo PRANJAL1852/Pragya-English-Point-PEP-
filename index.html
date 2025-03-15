@@ -7,27 +7,37 @@
     <style>
         /* Global Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
-        body { background: #f5f5f5; color: #333; }
-        
+        body { background: linear-gradient(to right, #e3f2fd, #bbdefb); color: #333; }
+
         /* Navbar */
-        .navbar { position: fixed; width: 100%; top: 0; left: 0; background: #222; padding: 15px 0; text-align: center; z-index: 1000; }
-        .navbar a { color: white; text-decoration: none; padding: 15px 20px; font-size: 18px; display: inline-block; transition: 0.3s; }
+        .navbar { position: fixed; width: 100%; top: 0; left: 0; background: rgba(34, 34, 34, 0.9); padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); }
+        .navbar a { color: white; text-decoration: none; padding: 15px 20px; font-size: 18px; display: inline-block; transition: 0.3s; border-radius: 5px; }
         .navbar a:hover { background: #ffcc00; color: #000; }
-        
+
         /* Sections */
-        section { padding: 80px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
-        #home { background: url('logo.png') no-repeat center center/cover; color: white; font-size: 2rem; font-weight: bold; }
-        #about { background: white; }
-        #courses { background: #ffcc00; }
-        #contact { background: white; }
-        
+        section { padding: 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
+
+        /* Home Section */
+        #home { background: url('background.jpg') no-repeat center center/cover; color: white; }
+        .title { font-size: 2.5rem; font-weight: bold; transition: color 1s ease-in-out; }
+
         /* Logo */
-        .logo { max-width: 200px; margin-bottom: 20px; }
-        
+        .logo { max-width: 250px; display: block; margin: 20px auto; }
+
+        /* About Section */
+        #about { background: white; padding: 100px 40px; }
+
+        /* Courses Section */
+        #courses { background: #ffcc00; color: #222; padding: 100px 40px; }
+
+        /* Contact Section */
+        #contact { background: white; padding: 100px 40px; }
+        #map iframe { width: 100%; max-width: 600px; height: 300px; margin-top: 20px; border: none; }
+
         /* Floating WhatsApp Button */
         .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: 0.3s; }
         .whatsapp:hover { background: #128c7e; }
-        
+
         /* Footer */
         .footer { text-align: center; padding: 20px; background: #222; color: white; }
     </style>
@@ -46,7 +56,7 @@
     <section id="home">
         <div>
             <img src="logo.png" class="logo" alt="PEP Logo">
-            <h1>Welcome to Pragya English Point</h1>
+            <h1 class="title" id="changing-title">Welcome to Pragya English Point</h1>
             <p>The Best English Coaching in Rasra, UP</p>
         </div>
     </section>
@@ -82,7 +92,7 @@
             <p>📞 Call: <strong>7275116996</strong>, <strong>7619835856</strong></p>
             <p>📩 WhatsApp: <strong>7619835856</strong></p>
             <div id="map">
-                <iframe src="https://www.google.com/maps?q=RSS+Office+Road,+Rasra,+UP+221712&output=embed" width="300" height="200"></iframe>
+                <iframe src="https://www.google.com/maps?q=RSS+Office+Road,+Rasra,+UP+221712&output=embed"></iframe>
             </div>
         </div>
     </section>
@@ -94,6 +104,18 @@
     <div class="footer">
         <p>© 2025 Pragya English Point (PEP). All Rights Reserved.</p>
     </div>
+
+    <!-- JavaScript for Changing RGB Title -->
+    <script>
+        function changeTitleColor() {
+            let title = document.getElementById("changing-title");
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            title.style.color = `rgb(${r},${g},${b})`;
+        }
+        setInterval(changeTitleColor, 1000);
+    </script>
 
 </body>
 </html>

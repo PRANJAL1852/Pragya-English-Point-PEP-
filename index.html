@@ -14,14 +14,36 @@
             scroll-behavior: smooth;
         }
         body {
-            background: linear-gradient(135deg, #1c1c1c, #333, #1c1c1c);
+            background: #0a0a0a;
             color: white;
-            overflow-x: hidden;
+            overflow: hidden;
+        }
+
+        /* Full-Page Sections */
+        section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Navigation Bar */
         nav {
             position: fixed;
+            top: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.9);
             padding: 15px 0;
@@ -45,32 +67,8 @@
             color: black;
         }
 
-        /* Section Styling */
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Header Section */
         header {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             background: url('https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg') no-repeat center center/cover;
             position: relative;
         }
@@ -110,14 +108,24 @@
 
         /* About Section */
         #about {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin: 20px;
-            padding: 40px;
+            background: #1c1c1c;
+            padding: 100px 20px;
+        }
+        #about h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        #about p {
+            max-width: 800px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
         }
 
-        /* Course Cards */
+        /* Courses Section */
+        #courses {
+            background: #0a0a0a;
+        }
         .courses {
             display: flex;
             justify-content: center;
@@ -140,11 +148,40 @@
 
         /* Contact Section */
         #contact {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin: 20px;
-            padding: 40px;
+            background: #1c1c1c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #contact h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .contact-info {
+            text-align: left;
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .map {
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Footer */
@@ -195,7 +232,13 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
-        <p>Pragya English Point (PEP) is the leading coaching center for Academic English, Competitive English, and Spoken English. Our mission is to empower students with excellent English skills and help them achieve their academic and professional goals.</p>
+        <p>
+            Pragya English Point (PEP) is the leading coaching center for Academic English, Competitive English, and Spoken English. Our mission is to empower students with excellent English skills and help them achieve their academic and professional goals. With a team of experienced faculty members, we provide personalized coaching to ensure every student reaches their full potential.
+            <br><br>
+            Established in 2020, PEP has helped over 1,000 students achieve success in various competitive exams, including SSC, Bank, Air Force, and more. We offer a wide range of courses, including Spoken English, Competitive English, M.A. & B.A. classes, and preparation for TGT, PGT, NET, JRF, CUET, CTET, UPTET, and SUPER TET.
+            <br><br>
+            Our state-of-the-art facilities and innovative teaching methods make us the best choice for English coaching in Rasra, Uttar Pradesh. Join us today and take the first step towards a brighter future!
+        </p>
     </section>
 
     <!-- Courses Section -->
@@ -213,8 +256,15 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>📍 Address: RSS Office Road, Rasra, UP, 221712</p>
-        <p>📞 Phone: 7275116996, 7619835856</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>📍 Address: RSS Office Road, Rasra, UP, 221712</p>
+                <p>📞 Phone: 7275116996, 7619835856</p>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14378.123456789012!2d83.987654321!3d25.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991a123456789ab%3A0x1234567890abcdef!2sRSS%20Office%20Road%2C%20Rasra%2C%20Uttar%20Pradesh%20221712!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -225,7 +275,7 @@
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
 
-    <!-- JavaScript for Smooth Transitions -->
+    <!-- JavaScript for Full-Page Scrolling -->
     <script>
         document.addEventListener("scroll", () => {
             const sections = document.querySelectorAll("section");
@@ -233,6 +283,8 @@
                 const rect = section.getBoundingClientRect();
                 if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
                     section.classList.add("visible");
+                } else {
+                    section.classList.remove("visible");
                 }
             });
         });

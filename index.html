@@ -5,170 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pragya English Point (PEP)</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { text-align: center; overflow: hidden; }
-        
-        /* Navigation */
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
         nav {
             position: fixed;
             width: 100%;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            padding: 15px;
-            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
             z-index: 1000;
-            display: flex;
-            justify-content: center;
         }
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px 20px;
+            display: inline-block;
             font-size: 18px;
             transition: 0.3s;
-            font-weight: bold;
         }
-        nav a.active { color: yellow; }
-        nav a:hover { color: cyan; }
+        nav a:hover {
+            color: #f4a261;
+        }
 
-        /* Sections */
-        .section {
+        /* Full Page Sections */
+        section {
             height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            transition: opacity 1s ease-in-out;
-        }
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-            position: absolute;
-        }
-
-        /* Backgrounds */
-        #home { background: url('YOUR_IMAGE_URL_HERE') no-repeat center center/cover; color: white; }
-        #about { background: linear-gradient(to right, #2193b0, #6dd5ed); color: white; }
-        #courses { background: linear-gradient(to right, #ff9a9e, #fad0c4); color: black; }
-        #contact { background: linear-gradient(to right, #fbc2eb, #a6c1ee); color: black; }
-
-        /* Header */
-        header { text-align: center; }
-        #logo { width: 250px; }
-        .rgb-text {
-            font-size: 3rem;
-            animation: rgbEffect 3s infinite;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
             font-weight: bold;
+        }
+        #home { background: url('https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg') no-repeat center center/cover; }
+        #about { background: linear-gradient(120deg, #ff7eb3, #ff758c); }
+        #courses { background: linear-gradient(120deg, #8e44ad, #3498db); }
+        #contact { background: linear-gradient(120deg, #2c3e50, #4ca1af); }
+
+        /* Dynamic RGB Title */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: rgbEffect 3s infinite;
         }
         @keyframes rgbEffect {
             0% { color: red; }
-            50% { color: blue; }
-            100% { color: green; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: yellow; }
+            100% { color: red; }
         }
 
-        /* Courses */
-        .course-card {
-            background: white;
+        /* Footer */
+        footer {
+            text-align: center;
             padding: 20px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, background 0.3s;
-            font-weight: bold;
-        }
-        .course-card:hover {
-            transform: scale(1.1);
-            background: #ffcc00;
+            background: black;
+            color: white;
+            font-size: 1rem;
         }
 
-        /* WhatsApp Button */
+        /* Floating WhatsApp Button */
         .whatsapp {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: green;
-            padding: 15px;
+            color: white;
+            padding: 10px;
             border-radius: 50%;
             font-size: 2rem;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s;
+            cursor: pointer;
+            animation: bounce 2s infinite;
         }
-        .whatsapp:hover { transform: scale(1.2); }
-
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <a href="#home" class="active">Home</a>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <header>
-            <img id="logo" src="YOUR_IMAGE_URL_HERE" alt="Pragya English Point Logo">
-            <h1 class="rgb-text">Pragya English Point (PEP)</h1>
-            <p class="tagline">The Best English Coaching in Rasra, UP</p>
-        </header>
+    <!-- Sections -->
+    <section id="home">
+        <h1>Pragya English Point (PEP)</h1>
+        <p class="tagline">The Best English Coaching in Rasra, UP</p>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section hidden">
+    <section id="about">
         <h2>About Us</h2>
-        <p>Pragya English Point (PEP) is a premier coaching institute offering top-quality English education.</p>
+        <p>Pragya English Point (PEP) provides expert training in Academic and Competitive English.</p>
     </section>
 
-    <!-- Courses Section -->
-    <section id="courses" class="section hidden">
+    <section id="courses">
         <h2>Our Courses</h2>
-        <div class="courses">
-            <div class="course-card">Spoken English (Basic & Advanced)</div>
-            <div class="course-card">Competitive English (SSC, Bank, Air Force, etc.)</div>
-            <div class="course-card">M.A. & B.A. Classes (Hindi & English)</div>
-            <div class="course-card">TGT, PGT, NET, JRF Preparation</div>
-            <div class="course-card">CUET, CTET, UPTET, SUPER TET Coaching</div>
-        </div>
+        <p>Spoken English, Competitive English, MA & BA, TGT, PGT, CUET, CTET, and more.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section hidden">
+    <section id="contact">
         <h2>Contact Us</h2>
         <p>📍 Address: RSS Office Road, Rasra, UP</p>
         <p>📞 Phone: 7275116996, 7619835856</p>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Pragya English Point. All Rights Reserved.
+    </footer>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll(".section");
-            const navLinks = document.querySelectorAll("nav a");
-
-            function showSection(id) {
-                sections.forEach(section => {
-                    section.classList.add("hidden");
-                });
-
-                document.querySelector(id).classList.remove("hidden");
-
-                navLinks.forEach(link => link.classList.remove("active"));
-                document.querySelector(`nav a[href="${id}"]`).classList.add("active");
-            }
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    showSection(link.getAttribute("href"));
-                });
-            });
-
-            showSection("#home"); // Default to Home Section
-        });
-    </script>
 
 </body>
 </html>

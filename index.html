@@ -5,22 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pragya English Point (PEP)</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background: #f5f5f5;
-            text-align: center;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { text-align: center; overflow: hidden; }
+        
         /* Navigation */
         nav {
             position: fixed;
             width: 100%;
-            background: black;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
             padding: 15px;
             top: 0;
             z-index: 1000;
@@ -33,14 +25,10 @@
             padding: 10px 20px;
             font-size: 18px;
             transition: 0.3s;
-        }
-        nav a.active {
-            color: yellow;
             font-weight: bold;
         }
-        nav a:hover {
-            color: cyan;
-        }
+        nav a.active { color: yellow; }
+        nav a:hover { color: cyan; }
 
         /* Sections */
         .section {
@@ -56,16 +44,19 @@
             position: absolute;
         }
 
+        /* Backgrounds */
+        #home { background: url('YOUR_IMAGE_URL_HERE') no-repeat center center/cover; color: white; }
+        #about { background: linear-gradient(to right, #2193b0, #6dd5ed); color: white; }
+        #courses { background: linear-gradient(to right, #ff9a9e, #fad0c4); color: black; }
+        #contact { background: linear-gradient(to right, #fbc2eb, #a6c1ee); color: black; }
+
         /* Header */
-        header {
-            text-align: center;
-        }
-        #logo {
-            width: 200px;
-        }
+        header { text-align: center; }
+        #logo { width: 250px; }
         .rgb-text {
             font-size: 3rem;
             animation: rgbEffect 3s infinite;
+            font-weight: bold;
         }
         @keyframes rgbEffect {
             0% { color: red; }
@@ -79,11 +70,13 @@
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background 0.3s;
+            font-weight: bold;
         }
         .course-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            background: #ffcc00;
         }
 
         /* WhatsApp Button */
@@ -92,12 +85,15 @@
             bottom: 20px;
             right: 20px;
             background: green;
-            padding: 10px;
+            padding: 15px;
             border-radius: 50%;
             font-size: 2rem;
             text-decoration: none;
             color: white;
+            transition: transform 0.3s;
         }
+        .whatsapp:hover { transform: scale(1.2); }
+
     </style>
 </head>
 <body>
@@ -113,7 +109,7 @@
     <!-- Home Section -->
     <section id="home" class="section">
         <header>
-            <img id="logo" src="images/logo.png" alt="Pragya English Point Logo">
+            <img id="logo" src="YOUR_IMAGE_URL_HERE" alt="Pragya English Point Logo">
             <h1 class="rgb-text">Pragya English Point (PEP)</h1>
             <p class="tagline">The Best English Coaching in Rasra, UP</p>
         </header>

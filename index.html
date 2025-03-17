@@ -34,6 +34,13 @@
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Navigation Bar */
@@ -88,17 +95,123 @@
             animation: rgbEffect 3s infinite;
         }
         @keyframes rgbEffect {
-            0% { color: red; }
-            25% { color: blue; }
-            50% { color: green; }
-            75% { color: yellow; }
-            100% { color: red; }
+            0% { color: #ffcc00; } /* Yellow */
+            50% { color: #ff6600; } /* Orange */
+            100% { color: #ffcc00; } /* Yellow */
         }
         .tagline {
             font-size: 1.5rem;
             font-weight: bold;
             z-index: 1;
             animation: rgbEffect 3s infinite;
+        }
+
+        /* About Section */
+        #about {
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80') no-repeat center center/cover;
+        }
+        #about h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        #about p {
+            max-width: 800px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .highlight {
+            background: #f4a261;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: black;
+        }
+        .pointer {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Courses Section */
+        #courses {
+            background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        }
+        .courses {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .course-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: url('https://images.unsplash.com/photo-1528747045269-390fe33c19f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .contact-info {
+            text-align: left;
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .map {
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -113,18 +226,19 @@
     </nav>
 
     <!-- Header -->
-    <section id="home">
+    <section id="home" class="visible">
         <img id="logo" src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
         <h1>Pragya English Point (PEP)</h1>
         <p class="tagline">The Best English Coaching in Rasra, UP</p>
     </section>
+
     <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
         <p>
-            <span class="highlight">Pragya English Point (PEP)</span> is the leading coaching center for <span class="highlight">Academic English</span>, <span class="highlight">Competitive English</span>, and <span class="highlight">Spoken English</span>. Our mission is to empower students with excellent English skills and help them achieve their academic and professional goals. With a team of experienced faculty members, we provide personalized coaching to ensure every student reaches their full potential.
+            <span class="highlight">Pragya English Point (PEP)</span> is the leading coaching center for <span class="highlight">Academic English</span>, <span class="highlight">Competitive English</span>, and <span class="highlight">Spoken English</span>. Established in <span class="highlight">1995</span>, we have been empowering students with excellent English skills and helping them achieve their academic and professional goals. Our coaching center is open until <span class="highlight">8 PM</span> to accommodate students' schedules.
             <br><br>
-            Established in <span class="highlight">2020</span>, PEP has helped over <span class="highlight">1,000 students</span> achieve success in various competitive exams, including <span class="highlight">SSC</span>, <span class="highlight">Bank</span>, <span class="highlight">Air Force</span>, and more. We offer a wide range of courses, including:
+            We offer a wide range of courses, including:
             <ul class="pointer">
                 <li>Spoken English (Basic & Advanced)</li>
                 <li>Competitive English (SSC, Bank, Air Force, etc.)</li>
@@ -133,7 +247,7 @@
                 <li>CUET, CTET, UPTET, SUPER TET Coaching</li>
             </ul>
             <br>
-            Our state-of-the-art facilities and innovative teaching methods make us the best choice for English coaching in <span class="highlight">Rasra, Uttar Pradesh</span>. Join us today and take the first step towards a brighter future!
+            Join us today and take the first step towards a brighter future!
         </p>
     </section>
 
@@ -141,46 +255,13 @@
     <section id="courses">
         <h2>Our Courses</h2>
         <div class="courses">
-            <div class="course-card" onclick="showCourseDetails('spoken-english')">Spoken English</div>
-            <div class="course-card" onclick="showCourseDetails('competitive-english')">Competitive English</div>
-            <div class="course-card" onclick="showCourseDetails('ma-ba')">M.A. & B.A. (Hindi & English)</div>
-            <div class="course-card" onclick="showCourseDetails('tgt-pgt')">TGT, PGT, NET, JRF</div>
-            <div class="course-card" onclick="showCourseDetails('cuet-ctet')">CUET, CTET, UPTET</div>
+            <a href="spoken-english.html" class="course-card">Spoken English</a>
+            <a href="competitive-english.html" class="course-card">Competitive English</a>
+            <a href="ma-ba.html" class="course-card">M.A. & B.A. (Hindi & English)</a>
+            <a href="tgt-pgt.html" class="course-card">TGT, PGT, NET, JRF</a>
+            <a href="cuet-ctet.html" class="course-card">CUET, CTET, UPTET</a>
         </div>
     </section>
-
-    <!-- Course Details Pages -->
-    <div id="spoken-english" class="course-details">
-        <h2>Spoken English</h2>
-        <p>
-            Our <span class="highlight">Spoken English</span> course is designed to help you master English communication for daily life, interviews, and professional settings. Whether you're a beginner or looking to refine your skills, this course covers:
-            <ul class="pointer">
-                <li>Basic Grammar and Vocabulary</li>
-                <li>Conversational English</li>
-                <li>Public Speaking and Presentation Skills</li>
-                <li>Interview Preparation</li>
-            </ul>
-            Join us to become a confident English speaker!
-        </p>
-        <div class="close-btn" onclick="hideCourseDetails()">×</div>
-    </div>
-
-    <div id="competitive-english" class="course-details">
-        <h2>Competitive English</h2>
-        <p>
-            Our <span class="highlight">Competitive English</span> course is tailored for students preparing for exams like <span class="highlight">SSC</span>, <span class="highlight">Bank</span>, and <span class="highlight">Air Force</span>. This course includes:
-            <ul class="pointer">
-                <li>Comprehensive Grammar and Vocabulary</li>
-                <li>Reading Comprehension and Cloze Tests</li>
-                <li>Error Detection and Correction</li>
-                <li>Mock Tests and Previous Year Papers</li>
-            </ul>
-            Enroll now to ace your exams!
-        </p>
-        <div class="close-btn" onclick="hideCourseDetails()">×</div>
-    </div>
-
-    <!-- Add more course details pages as needed -->
 
     <!-- Contact Section -->
     <section id="contact">
@@ -204,17 +285,20 @@
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
 
-    <!-- JavaScript for Course Details -->
+    <!-- JavaScript for Section Animations -->
     <script>
-        function showCourseDetails(courseId) {
-            document.getElementById(courseId).classList.add('visible');
-        }
-        function hideCourseDetails() {
-            document.querySelectorAll('.course-details').forEach(detail => {
-                detail.classList.remove('visible');
+        document.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
+                    section.classList.add("visible");
+                } else {
+                    section.classList.remove("visible");
+                }
             });
-        }
+        });
     </script>
 
 </body>
-</html>
+                </html>

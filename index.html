@@ -11,36 +11,11 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
         }
         body {
             background: #0a0a0a;
             color: white;
             overflow-x: hidden;
-        }
-
-        /* Full-Page Sections */
-        section {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            overflow: hidden;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* Navigation Bar */
@@ -64,10 +39,35 @@
             font-size: 18px;
             transition: 0.3s;
             border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
         }
         nav a:hover {
             background: #f4a261;
             color: black;
+        }
+
+        /* Sections */
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Header Section */
@@ -150,7 +150,6 @@
             width: 300px;
             box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease-in-out;
-            cursor: pointer;
         }
         .course-card:hover {
             transform: scale(1.05);
@@ -255,11 +254,11 @@
     <section id="courses">
         <h2>Our Courses</h2>
         <div class="courses">
-            <a href="spoken-english.html" class="course-card">Spoken English</a>
-            <a href="competitive-english.html" class="course-card">Competitive English</a>
-            <a href="ma-ba.html" class="course-card">M.A. & B.A. (Hindi & English)</a>
-            <a href="tgt-pgt.html" class="course-card">TGT, PGT, NET, JRF</a>
-            <a href="cuet-ctet.html" class="course-card">CUET, CTET, UPTET</a>
+            <div class="course-card">Spoken English</div>
+            <div class="course-card">Competitive English</div>
+            <div class="course-card">M.A. & B.A. (Hindi & English)</div>
+            <div class="course-card">TGT, PGT, NET, JRF</div>
+            <div class="course-card">CUET, CTET, UPTET</div>
         </div>
     </section>
 
@@ -268,7 +267,7 @@
         <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p>📍 Address: RSS Office Road, Rasra, UP, 221712</p>
+                <p>📍 Address: RSS Office Road, Rasra, UP, 221712 (Near Deehbaba)</p>
                 <p>📞 Phone: 7275116996, 7619835856</p>
             </div>
             <div class="map">
@@ -287,18 +286,31 @@
 
     <!-- JavaScript for Section Animations -->
     <script>
-        document.addEventListener("scroll", () => {
+        document.addEventListener("DOMContentLoaded", () => {
             const sections = document.querySelectorAll("section");
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
-                    section.classList.add("visible");
-                } else {
-                    section.classList.remove("visible");
-                }
+            const navLinks = document.querySelectorAll("nav a");
+
+            // Show the first section by default
+            sections[0].classList.add("visible");
+
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
+
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.remove("visible");
+                    });
+
+                    // Show the target section
+                    targetSection.classList.add("visible");
+                });
             });
         });
     </script>
 
 </body>
-                </html>
+</html>

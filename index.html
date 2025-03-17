@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
         body {
-            background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
-            overflow-x: hidden;
+            background: #f4f4f4;
+            color: #333;
         }
 
         /* Navigation Bar */
@@ -26,47 +26,67 @@
             padding: 15px 0;
             text-align: center;
             z-index: 1000;
+            transition: 0.3s;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 15px 25px;
             display: inline-block;
             font-size: 18px;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out;
         }
         nav a:hover {
-            color: #f4a261;
+            color: #ffcc00;
         }
 
-        /* Full Page Sections */
-        section {
+        /* Sections */
+        .section {
             height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
+            padding: 20px;
+            transition: opacity 0.8s ease-in-out;
         }
-        #home { background: url('https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg') no-repeat center center/cover; }
-        #about { background: linear-gradient(120deg, #ff7eb3, #ff758c); }
-        #courses { background: linear-gradient(120deg, #8e44ad, #3498db); }
-        #contact { background: linear-gradient(120deg, #2c3e50, #4ca1af); }
 
-        /* Dynamic RGB Title */
+        #home {
+            background: url('https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg') no-repeat center center/cover;
+            color: white;
+        }
         h1 {
             font-size: 3rem;
-            font-weight: bold;
-            animation: rgbEffect 3s infinite;
+            animation: colorChange 3s infinite;
         }
-        @keyframes rgbEffect {
+        @keyframes colorChange {
             0% { color: red; }
             25% { color: blue; }
             50% { color: green; }
             75% { color: yellow; }
             100% { color: red; }
+        }
+
+        /* Animated Button */
+        .cta-btn {
+            background: #ffcc00;
+            color: black;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s ease-in-out;
+        }
+        .cta-btn:hover {
+            background: #ff9900;
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: black;
+            color: white;
         }
 
         /* Footer */
@@ -75,25 +95,6 @@
             padding: 20px;
             background: black;
             color: white;
-            font-size: 1rem;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: green;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 2rem;
-            cursor: pointer;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -107,25 +108,31 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Sections -->
-    <section id="home">
-        <h1>Pragya English Point (PEP)</h1>
-        <p class="tagline">The Best English Coaching in Rasra, UP</p>
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div>
+            <h1>Welcome to Pragya English Point (PEP)</h1>
+            <p>The Best English Coaching in Rasra, UP</p>
+            <button class="cta-btn">Join Now</button>
+        </div>
     </section>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="section">
         <h2>About Us</h2>
-        <p>Pragya English Point (PEP) provides expert training in Academic and Competitive English.</p>
+        <p>Pragya English Point (PEP) offers world-class English coaching for all levels.</p>
     </section>
 
-    <section id="courses">
+    <!-- Courses Section -->
+    <section id="courses" class="section">
         <h2>Our Courses</h2>
-        <p>Spoken English, Competitive English, MA & BA, TGT, PGT, CUET, CTET, and more.</p>
+        <p>We provide expert training for Spoken English, Competitive Exams, and more.</p>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
         <h2>Contact Us</h2>
-        <p>📍 Address: RSS Office Road, Rasra, UP</p>
+        <p>📍 Address: RSS Office Road, Rasra, Uttar Pradesh, 221712</p>
         <p>📞 Phone: 7275116996, 7619835856</p>
     </section>
 
@@ -133,9 +140,6 @@
     <footer>
         &copy; 2025 Pragya English Point. All Rights Reserved.
     </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
 
 </body>
 </html>

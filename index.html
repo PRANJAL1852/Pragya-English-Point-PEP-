@@ -165,29 +165,32 @@
         }
         .contact-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 40px;
-            max-width: 1200px;
+            gap: 20px;
+            max-width: 800px;
             margin: auto;
         }
         .contact-info {
-            text-align: left;
+            text-align: center;
         }
         .contact-info p {
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
-        .map {
-            width: 500px;
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
+        .map-button button {
+            background: #f4a261;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
-        .map iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .map-button button:hover {
+            background: #ff8c42;
         }
 
         /* Footer */
@@ -273,47 +276,51 @@
             <div class="contact-info">
                 <p>📍 Address: RSS Office Road, Rasra, UP, 221712 (Near Deehbaba)</p>
                 <p>📞 Phone: 7275116996, 7619835856</p>
+                <p>🕒 Open: 8 AM - 8 PM</p>
             </div>
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14378.123456789012!2d83.987654321!3d25.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991a123456789ab%3A0x1234567890abcdef!2sRSS%20Office%20Road%2C%20Rasra%2C%20Uttar%20Pradesh%20221712!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-button">
+                <button onclick="openMap()">Locate Us on Map</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        &copy; 2025 Pragya English Point. All Rights Reserved.
+        &copy; 2025 Pragya English Point. All Rights Reserved.<br>
+        <small>Find us on <a href="https://www.justdial.com/" style="color: #f4a261;">Justdial</a></small>
     </footer>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
 
-    <!-- JavaScript for Section Animations -->
+    <!-- JavaScript for Section Management and Map Redirection -->
     <script>
+        // Section visibility control
         document.addEventListener("DOMContentLoaded", () => {
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll("nav a");
 
-            // Show the first section by default
+            // Initialize first section
             sections[0].classList.add("visible");
 
-            // Add click event listeners to navigation links
+            // Navigation click handler
             navLinks.forEach(link => {
                 link.addEventListener("click", (e) => {
                     e.preventDefault();
-                    const targetId = link.getAttribute("href");
-                    const targetSection = document.querySelector(targetId);
-
-                    // Hide all sections
-                    sections.forEach(section => {
-                        section.classList.remove("visible");
-                    });
-
-                    // Show the target section
-                    targetSection.classList.add("visible");
+                    const target = document.querySelector(link.getAttribute("href"));
+                    sections.forEach(section => section.classList.remove("visible"));
+                    target.classList.add("visible");
                 });
             });
         });
+
+        // Function to open the exact location on Google Maps
+        function openMap() {
+            const latitude = 25.855361; // 25°51'19.3"N
+            const longitude = 83.855917; // 83°51'21.3"E
+            const url = `https://www.google.com/maps?q=${latitude},${longitude}`;
+            window.open(url, "_blank");
+        }
     </script>
 
 </body>

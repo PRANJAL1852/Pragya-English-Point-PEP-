@@ -14,8 +14,8 @@
             scroll-behavior: smooth;
         }
         body {
-            background: #f4f4f4;
-            color: #333;
+            background: linear-gradient(135deg, #1c1c1c, #333, #1c1c1c);
+            color: white;
         }
 
         /* Navigation Bar */
@@ -26,67 +26,89 @@
             padding: 15px 0;
             text-align: center;
             z-index: 1000;
-            transition: 0.3s;
+            display: flex;
+            justify-content: center;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 15px 25px;
-            display: inline-block;
+            padding: 15px 20px;
+            margin: 0 10px;
             font-size: 18px;
-            transition: 0.3s ease-in-out;
+            transition: 0.3s;
+            border-radius: 5px;
         }
         nav a:hover {
-            color: #ffcc00;
+            background: #f4a261;
+            color: black;
         }
 
-        /* Sections */
-        .section {
+        /* Section Styling */
+        section {
             height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 20px;
-            transition: opacity 0.8s ease-in-out;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        #home {
-            background: url('https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg') no-repeat center center/cover;
-            color: white;
+        /* Header Section */
+        header {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo {
+            width: 250px;
+            margin-bottom: 20px;
         }
         h1 {
-            font-size: 3rem;
-            animation: colorChange 3s infinite;
+            font-size: 3.5rem;
+            font-weight: bold;
+            animation: rgbEffect 3s infinite;
         }
-        @keyframes colorChange {
+        @keyframes rgbEffect {
             0% { color: red; }
             25% { color: blue; }
             50% { color: green; }
             75% { color: yellow; }
             100% { color: red; }
         }
-
-        /* Animated Button */
-        .cta-btn {
-            background: #ffcc00;
-            color: black;
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: 0.3s ease-in-out;
-        }
-        .cta-btn:hover {
-            background: #ff9900;
-            transform: scale(1.1);
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: rgbEffect 3s infinite;
         }
 
-        /* Contact Section */
-        .contact {
-            background: black;
-            color: white;
+        /* Course Cards */
+        .courses {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .course-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -95,6 +117,25 @@
             padding: 20px;
             background: black;
             color: white;
+            font-size: 1rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -108,31 +149,35 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div>
-            <h1>Welcome to Pragya English Point (PEP)</h1>
-            <p>The Best English Coaching in Rasra, UP</p>
-            <button class="cta-btn">Join Now</button>
-        </div>
-    </section>
+    <!-- Header -->
+    <header id="home" class="visible">
+        <img id="logo" src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
+        <h1>Pragya English Point (PEP)</h1>
+        <p class="tagline">The Best English Coaching in Rasra, UP</p>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about">
         <h2>About Us</h2>
-        <p>Pragya English Point (PEP) offers world-class English coaching for all levels.</p>
+        <p>Pragya English Point (PEP) is the leading coaching center for Academic English, Competitive English, and Spoken English.</p>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="section">
+    <section id="courses">
         <h2>Our Courses</h2>
-        <p>We provide expert training for Spoken English, Competitive Exams, and more.</p>
+        <div class="courses">
+            <div class="course-card">Spoken English</div>
+            <div class="course-card">Competitive English</div>
+            <div class="course-card">M.A. & B.A. (Hindi & English)</div>
+            <div class="course-card">TGT, PGT, NET, JRF</div>
+            <div class="course-card">CUET, CTET, UPTET</div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact">
         <h2>Contact Us</h2>
-        <p>📍 Address: RSS Office Road, Rasra, Uttar Pradesh, 221712</p>
+        <p>📍 Address: RSS Office Road, Rasra, UP, 221712</p>
         <p>📞 Phone: 7275116996, 7619835856</p>
     </section>
 
@@ -140,6 +185,22 @@
     <footer>
         &copy; 2025 Pragya English Point. All Rights Reserved.
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
+
+    <!-- JavaScript for Smooth Transitions -->
+    <script>
+        document.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
+                    section.classList.add("visible");
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -64,10 +64,12 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            display: none; /* Hide all sections by default */
         }
         section.visible {
             opacity: 1;
             transform: translateY(0);
+            display: flex; /* Show the visible section */
         }
 
         /* Header Section */
@@ -150,6 +152,8 @@
             width: 300px;
             box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease-in-out;
+            font-weight: bold;
+            text-decoration: underline;
         }
         .course-card:hover {
             transform: scale(1.05);

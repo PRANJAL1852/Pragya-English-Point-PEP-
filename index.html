@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pragya English Point (PEP) - Your Trusted English Coaching</title>
+    <title>🌟 Pragya English Point (PEP) 🌟 - Your Trusted English Coaching</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #f5f7fb;
+            background: linear-gradient(135deg, #e0f7fa, #fffde7);
             color: #333;
         }
 
@@ -22,82 +22,116 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #ff6f61, #ffab91);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .header .logo-container {
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
         .header img {
-            height: 50px;
+            height: 70px;
+            border-radius: 50%;
         }
 
         .header .login-btn {
-            background-color: #6a5af9;
+            background: linear-gradient(45deg, #6a5af9, #a78bfa);
             color: #fff;
-            padding: 8px 20px;
-            border-radius: 20px;
+            padding: 10px 25px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .header .login-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(106, 90, 249, 0.4);
         }
 
         /* Banner */
         .banner {
-            background: linear-gradient(90deg, #4a90e2, #87ceeb);
+            background: linear-gradient(90deg, #ff8a80, #f06292);
             color: #fff;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
             position: relative;
+            border-bottom: 5px solid #ffd700;
         }
 
         .banner h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .banner p {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .banner .enroll-btn {
-            background-color: #ffd700;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Main Section */
-        .main-section {
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .main-section h1 {
-            font-size: 28px;
-            color: #2e2e7e;
-            margin-bottom: 10px;
-        }
-
-        .main-section p {
-            font-size: 16px;
-            color: #666;
+            font-size: 18px;
             margin-bottom: 20px;
         }
 
-        .main-section .get-started-btn {
-            background-color: #6a5af9;
-            color: #fff;
+        .banner .enroll-btn {
+            background: linear-gradient(45deg, #ffd700, #ffeb3b);
+            color: #333;
             padding: 12px 30px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .banner .enroll-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Main Section */
+        .main-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e1bee7, #f3e5f5);
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        .main-section h1 {
+            font-size: 34px;
+            color: #d81b60;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .main-section .get-started-btn {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .main-section .get-started-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
         }
 
         /* Features Section */
@@ -105,94 +139,133 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            padding: 20px;
-            background-color: #fff;
-            margin: 20px 0;
-            border-radius: 10px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff9c4, #fffde7);
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .feature-card {
             text-align: center;
             width: 150px;
-            margin: 10px;
+            margin: 15px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
 
         .feature-card i {
-            font-size: 30px;
-            color: #6a5af9;
-            margin-bottom: 10px;
+            font-size: 40px;
+            color: #f06292;
+            margin-bottom: 15px;
         }
 
         .feature-card p {
-            font-size: 14px;
-            color: #333;
+            font-size: 16px;
+            color: #444;
         }
 
         /* Courses Section */
         .courses-section {
-            padding: 20px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #b2ebf2, #e0f7fa);
+            border-radius: 15px;
+            margin: 20px;
         }
 
         .courses-section h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 28px;
+            color: #0288d1;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .courses-section p {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .course-category {
-            background-color: #fff;
-            padding: 15px;
+            background: #fff;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .course-category h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            color: #d81b60;
+            margin-bottom: 15px;
         }
 
         .course-options {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
         .course-options a {
-            background-color: #f0f0f0;
-            padding: 8px 15px;
+            background: linear-gradient(45deg, #ffccbc, #ffab91);
+            padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
             color: #333;
             font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .course-options a:hover {
+            transform: scale(1.05);
         }
 
         .explore-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 10px;
+            margin-top: 15px;
             text-decoration: none;
-            color: #333;
+            color: #0288d1;
             font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .explore-btn:hover {
+            color: #d81b60;
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            background-color: #fff;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #c8e6c9, #e8f5e9);
+            border-radius: 15px;
             margin: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact-section h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 28px;
+            color: #388e3c;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .contact-section p {
             font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
+            color: #555;
+            margin-bottom: 15px;
         }
 
         /* Contact Buttons */
@@ -202,50 +275,64 @@
             right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
 
         .contact-btn {
-            background-color: #6a5af9;
+            background: linear-gradient(45deg, #6a5af9, #a78bfa);
             color: #fff;
-            padding: 10px;
+            padding: 15px;
             border-radius: 50%;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
         }
 
         .whatsapp-btn {
-            background-color: #25D366;
+            background: linear-gradient(45deg, #25D366, #4CAF50);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .header {
+                padding: 10px 20px;
+            }
+
+            .header .logo-container {
+                padding: 3px;
+            }
+
             .header img {
-                height: 40px;
+                height: 50px;
             }
 
             .header .login-btn {
-                padding: 6px 15px;
-                font-size: 12px;
+                padding: 8px 20px;
+                font-size: 14px;
             }
 
             .banner h2 {
-                font-size: 20px;
-            }
-
-            .banner p {
-                font-size: 14px;
-            }
-
-            .main-section h1 {
                 font-size: 24px;
             }
 
+            .banner p {
+                font-size: 16px;
+            }
+
+            .main-section h1 {
+                font-size: 28px;
+            }
+
             .main-section p {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .features {
@@ -259,20 +346,20 @@
             }
 
             .courses-section h2 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .course-category h3 {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .course-options a {
                 font-size: 12px;
-                padding: 6px 12px;
+                padding: 8px 15px;
             }
 
             .contact-section h2 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .contact-section p {
@@ -280,124 +367,127 @@
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <div class="header">
-        <img src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
-        <a href="#" class="login-btn">Login/Register</a>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
+        </div>
+        <a href="#" class="login-btn">🔑 Login/Register</a>
     </div>
 
     <!-- Banner -->
     <div class="banner">
-        <h2>Welcome to Pragya English Point</h2>
+        <h2>🌟 Welcome to Pragya English Point 🌟</h2>
         <p>Empowering Students Since 1995</p>
-        <a href="#" class="enroll-btn">Enroll Now</a>
+        <a href="tel:7275116996" class="enroll-btn">📞 Enroll Now</a>
     </div>
 
     <!-- Main Section -->
     <div class="main-section">
-        <h1>Your Trusted English Coaching in Rasra</h1>
+        <h1>✨ Your Trusted English Coaching in Rasra ✨</h1>
         <p>Unlock your potential with Pragya English Point - High-quality coaching for academic and professional success</p>
-        <a href="#" class="get-started-btn">Get Started</a>
+        <a href="https://wa.me/7619835856" class="get-started-btn">💬 Get Started</a>
     </div>
 
     <!-- Features Section -->
     <div class="features">
         <div class="feature-card">
             <i class="fas fa-chalkboard-teacher"></i>
-            <p>Expert Faculty</p>
+            <p>👩‍🏫 Expert Faculty</p>
         </div>
         <div class="feature-card">
             <i class="fas fa-book-open"></i>
-            <p>Comprehensive Courses</p>
+            <p>📚 Comprehensive Courses</p>
         </div>
         <div class="feature-card">
             <i class="fas fa-user-graduate"></i>
-            <p>Proven Results</p>
+            <p>🎓 Proven Results</p>
         </div>
         <div class="feature-card">
             <i class="fas fa-clock"></i>
-            <p>Open Until 8 PM</p>
+            <p>⏰ Open Until 8 PM</p>
         </div>
     </div>
 
     <!-- Courses Section -->
     <div class="courses-section">
-        <h2>Explore Our Courses</h2>
+        <h2>📖 Explore Our Courses 📖</h2>
         <p>PEP offers a wide range of courses to help you achieve your goals. Scroll down to find the one that suits you.</p>
 
         <div class="course-category">
-            <h3>Academic English</h3>
+            <h3>📚 Academic English</h3>
             <div class="course-options">
                 <a href="#">Class 6</a>
                 <a href="#">Class 7</a>
                 <a href="#">Class 8</a>
                 <a href="#">More</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
 
         <div class="course-category">
-            <h3>Competitive English</h3>
+            <h3>🏆 Competitive English</h3>
             <div class="course-options">
                 <a href="#">TGT</a>
                 <a href="#">PGT</a>
                 <a href="#">NET</a>
                 <a href="#">JRF</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
 
         <div class="course-category">
-            <h3>Spoken English</h3>
+            <h3>🗣️ Spoken English</h3>
             <div class="course-options">
                 <a href="#">Beginner</a>
                 <a href="#">Intermediate</a>
                 <a href="#">Advanced</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
 
         <div class="course-category">
-            <h3>University Preparation</h3>
+            <h3>🎓 University Preparation</h3>
             <div class="course-options">
                 <a href="#">M.A. (Hindi & English)</a>
                 <a href="#">B.A. (Hindi & English)</a>
                 <a href="#">CUET</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
 
         <div class="course-category">
-            <h3>Teaching Exams</h3>
+            <h3>👩‍🏫 Teaching Exams</h3>
             <div class="course-options">
                 <a href="#">CTET</a>
                 <a href="#">UPTET</a>
                 <a href="#">SUPER TET</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
 
         <div class="course-category">
-            <h3>Government Job Exams</h3>
+            <h3>💼 Government Job Exams</h3>
             <div class="course-options">
                 <a href="#">SSC</a>
                 <a href="#">Bank</a>
                 <a href="#">Air Force</a>
             </div>
-            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="explore-btn">Explore Category ➡️</a>
         </div>
     </div>
 
     <!-- Contact Section -->
     <div class="contact-section">
-        <h2>Contact Us</h2>
+        <h2>📞 Contact Us 📞</h2>
         <p>📍 RSS Office Road, Rasra, Uttar Pradesh, 221712, Near Dihbaba Asthan, Chhittauni</p>
         <p>📞 Call us at: 7275116996 or 7619835856</p>
         <p>💬 Chat with us on WhatsApp: 7619835856</p>
         <p>⏰ Open until 8 PM</p>
-        <p>Established in 1995, helping students achieve their academic and professional goals.</p>
+        <p>🌟 Established in 1995, helping students achieve their academic and professional goals.</p>
     </div>
 
     <!-- Contact Buttons -->
@@ -410,4 +500,4 @@
     <!-- Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
-                    </html>
+            </html>

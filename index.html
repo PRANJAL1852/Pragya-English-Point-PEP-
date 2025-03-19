@@ -3,325 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pragya English Point (PEP) - Best English Coaching in Rasra</title>
+    <title>Pragya English Point (PEP) - Your Trusted English Coaching</title>
     <style>
-        /* General Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
+
         body {
-            background: #0a0a0a;
-            color: white;
-            overflow-x: hidden;
+            background-color: #f5f7fb;
+            color: #333;
         }
 
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
+        /* Header */
+        .header {
             display: flex;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            margin: 0 10px;
-            font-size: 18px;
-            transition: 0.3s;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        nav a:hover {
-            background: #f4a261;
-            color: black;
-        }
-
-        /* Sections */
-        section {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            overflow: hidden;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            display: none; /* Hide all sections by default */
-        }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-            display: flex; /* Show the visible section */
-        }
-
-        /* Header Section */
-        #home {
-            background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-        }
-        #home::before {
-            content: '';
-            position: absolute;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        #logo {
-            width: 250px;
-            margin-bottom: 20px;
-            z-index: 1;
-        }
-        h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            z-index: 1;
-            animation: rgbEffect 3s infinite;
-        }
-        @keyframes rgbEffect {
-            0% { color: #ffcc00; } /* Yellow */
-            50% { color: #ff6600; } /* Orange */
-            100% { color: #ffcc00; } /* Yellow */
-        }
-        .tagline {
-            font-size: 1.5rem;
-            font-weight: bold;
-            z-index: 1;
-            animation: rgbEffect 3s infinite;
+            z-index: 1000;
         }
 
-        /* About Section */
-        #about {
-            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80') no-repeat center center/cover;
+        .header img {
+            height: 50px;
         }
-        #about h2 {
-            font-size: 3rem;
-            margin-bottom: 40px;
+
+        .header .login-btn {
+            background-color: #6a5af9;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
         }
-        #about p {
-            max-width: 800px;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: justify;
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(90deg, #4a90e2, #87ceeb);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
         }
-        .highlight {
-            background: #f4a261;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: black;
+
+        .banner h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-        .pointer {
-            list-style-type: disc;
-            margin-left: 20px;
+
+        .banner p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .banner .enroll-btn {
+            background-color: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main Section */
+        .main-section {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .main-section h1 {
+            font-size: 28px;
+            color: #2e2e7e;
+            margin-bottom: 10px;
+        }
+
+        .main-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .main-section .get-started-btn {
+            background-color: #6a5af9;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .feature-card {
+            text-align: center;
+            width: 150px;
+            margin: 10px;
+        }
+
+        .feature-card i {
+            font-size: 30px;
+            color: #6a5af9;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #333;
         }
 
         /* Courses Section */
-        #courses {
-            background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-        }
-        .courses {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .course-card {
-            background: rgba(255, 255, 255, 0.1);
+        .courses-section {
             padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease-in-out;
-            font-weight: bold;
-            text-decoration: underline;
         }
-        .course-card:hover {
-            transform: scale(1.05);
+
+        .courses-section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .course-category {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .course-category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .course-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .course-options a {
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .explore-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
 
         /* Contact Section */
-        #contact {
-            background: url('https://images.unsplash.com/photo-1528747045269-390fe33c19f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-        }
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        .contact-info {
-            text-align: center;
-        }
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        .map-button button {
-            background: #f4a261;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .map-button button:hover {
-            background: #ff8c42;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
+        .contact-section {
             padding: 20px;
-            background: black;
-            color: white;
-            font-size: 1rem;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 20px;
         }
 
-        /* WhatsApp Floating Button */
-        .whatsapp {
+        .contact-section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: green;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            background-color: #6a5af9;
+            color: #fff;
             padding: 10px;
             border-radius: 50%;
-            font-size: 2rem;
-            cursor: pointer;
-            animation: bounce 2s infinite;
+            text-decoration: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header img {
+                height: 40px;
+            }
+
+            .header .login-btn {
+                padding: 6px 15px;
+                font-size: 12px;
+            }
+
+            .banner h2 {
+                font-size: 20px;
+            }
+
+            .banner p {
+                font-size: 14px;
+            }
+
+            .main-section h1 {
+                font-size: 24px;
+            }
+
+            .main-section p {
+                font-size: 14px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .courses-section h2 {
+                font-size: 20px;
+            }
+
+            .course-category h3 {
+                font-size: 16px;
+            }
+
+            .course-options a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .contact-section h2 {
+                font-size: 20px;
+            }
+
+            .contact-section p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
     <!-- Header -->
-    <section id="home" class="visible">
-        <img id="logo" src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
-        <h1>Pragya English Point (PEP)</h1>
-        <p class="tagline">The Best English Coaching in Rasra, UP</p>
-    </section>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/PRANJAL1852/Pragya-English-Point-PEP-/refs/heads/main/Pragya%20English%20Point_20250316_215255_0000.jpg" alt="Pragya English Point Logo">
+        <a href="#" class="login-btn">Login/Register</a>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            <span class="highlight">Pragya English Point (PEP)</span> is the leading coaching center for <span class="highlight">Academic English</span>, <span class="highlight">Competitive English</span>, and <span class="highlight">Spoken English</span>. Established in <span class="highlight">1995</span>, we have been empowering students with excellent English skills and helping them achieve their academic and professional goals. Our coaching center is open until <span class="highlight">8 PM</span> to accommodate students' schedules.
-            <br><br>
-            We offer a wide range of courses, including:
-            <ul class="pointer">
-                <li>Spoken English (Basic & Advanced)</li>
-                <li>Competitive English (SSC, Bank, Air Force, etc.)</li>
-                <li>M.A. & B.A. Classes (Hindi & English)</li>
-                <li>TGT, PGT, NET, JRF Preparation</li>
-                <li>CUET, CTET, UPTET, SUPER TET Coaching</li>
-            </ul>
-            <br>
-            Join us today and take the first step towards a brighter future!
-        </p>
-    </section>
+    <!-- Banner -->
+    <div class="banner">
+        <h2>Welcome to Pragya English Point</h2>
+        <p>Empowering Students Since 1995</p>
+        <a href="#" class="enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main-section">
+        <h1>Your Trusted English Coaching in Rasra</h1>
+        <p>Unlock your potential with Pragya English Point - High-quality coaching for academic and professional success</p>
+        <a href="#" class="get-started-btn">Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <p>Expert Faculty</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-book-open"></i>
+            <p>Comprehensive Courses</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-user-graduate"></i>
+            <p>Proven Results</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-clock"></i>
+            <p>Open Until 8 PM</p>
+        </div>
+    </div>
 
     <!-- Courses Section -->
-    <section id="courses">
-        <h2>Our Courses</h2>
-        <div class="courses">
-            <div class="course-card">Spoken English</div>
-            <div class="course-card">Competitive English</div>
-            <div class="course-card">M.A. & B.A. (Hindi & English)</div>
-            <div class="course-card">TGT, PGT, NET, JRF</div>
-            <div class="course-card">CUET, CTET, UPTET</div>
+    <div class="courses-section">
+        <h2>Explore Our Courses</h2>
+        <p>PEP offers a wide range of courses to help you achieve your goals. Scroll down to find the one that suits you.</p>
+
+        <div class="course-category">
+            <h3>Academic English</h3>
+            <div class="course-options">
+                <a href="#">Class 6</a>
+                <a href="#">Class 7</a>
+                <a href="#">Class 8</a>
+                <a href="#">More</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
         </div>
-    </section>
+
+        <div class="course-category">
+            <h3>Competitive English</h3>
+            <div class="course-options">
+                <a href="#">TGT</a>
+                <a href="#">PGT</a>
+                <a href="#">NET</a>
+                <a href="#">JRF</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="course-category">
+            <h3>Spoken English</h3>
+            <div class="course-options">
+                <a href="#">Beginner</a>
+                <a href="#">Intermediate</a>
+                <a href="#">Advanced</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="course-category">
+            <h3>University Preparation</h3>
+            <div class="course-options">
+                <a href="#">M.A. (Hindi & English)</a>
+                <a href="#">B.A. (Hindi & English)</a>
+                <a href="#">CUET</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="course-category">
+            <h3>Teaching Exams</h3>
+            <div class="course-options">
+                <a href="#">CTET</a>
+                <a href="#">UPTET</a>
+                <a href="#">SUPER TET</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="course-category">
+            <h3>Government Job Exams</h3>
+            <div class="course-options">
+                <a href="#">SSC</a>
+                <a href="#">Bank</a>
+                <a href="#">Air Force</a>
+            </div>
+            <a href="#" class="explore-btn">Explore Category <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <div class="contact-section">
         <h2>Contact Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <p>📍 Address: RSS Office Road, Rasra, UP, 221712 (Near Deehbaba)</p>
-                <p>📞 Phone: 7275116996, 7619835856</p>
-                <p>🕒 Open: 8 AM - 8 PM</p>
-            </div>
-            <div class="map-button">
-                <button onclick="openMap()">Locate Us on Map</button>
-            </div>
-        </div>
-    </section>
+        <p>📍 RSS Office Road, Rasra, Uttar Pradesh, 221712, Near Dihbaba Asthan, Chhittauni</p>
+        <p>📞 Call us at: 7275116996 or 7619835856</p>
+        <p>💬 Chat with us on WhatsApp: 7619835856</p>
+        <p>⏰ Open until 8 PM</p>
+        <p>Established in 1995, helping students achieve their academic and professional goals.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Pragya English Point. All Rights Reserved.<br>
-        <small>Find us on <a href="https://www.justdial.com/" style="color: #f4a261;">Justdial</a></small>
-    </footer>
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+        <a href="tel:7275116996" class="contact-btn"><i class="fas fa-phone"></i></a>
+        <a href="tel:7619835856" class="contact-btn"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/7619835856" class="contact-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+    </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/7619835856" class="whatsapp">💬</a>
-
-    <!-- JavaScript for Section Management and Map Redirection -->
-    <script>
-        // Section visibility control
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("nav a");
-
-            // Initialize first section
-            sections[0].classList.add("visible");
-
-            // Navigation click handler
-            navLinks.forEach(link => {
-                link.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    const target = document.querySelector(link.getAttribute("href"));
-                    sections.forEach(section => section.classList.remove("visible"));
-                    target.classList.add("visible");
-                });
-            });
-        });
-
-        // Function to open the exact location on Google Maps
-        function openMap() {
-            const latitude = 25.855361; // 25°51'19.3"N
-            const longitude = 83.855917; // 83°51'21.3"E
-            const url = `https://www.google.com/maps?q=${latitude},${longitude}`;
-            window.open(url, "_blank");
-        }
-    </script>
-
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
-</html>
+                    </html>
